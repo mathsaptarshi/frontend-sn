@@ -1,0 +1,44 @@
+<div class="">
+  <div class="text-center">
+    <h2>Welcome! {{userName}}</h2>
+  </div>
+  <div>
+    Click<span class="text-danger" (click)="logOutUserFunc()"> here</span> to Logout!
+  </div>    
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div>
+      <form [formGroup]="postDetailsFormGroup" (ngSubmit)="postFormSubmit()">           
+        <div class="form-group">
+          <textarea formControlName="userPost" type="text" class="form-control" placeholder="Post Here" required=""></textarea>
+           <!-- <small class="text-danger" *ngIf="!!showErrorUserEmail">{{appVariables.vendorLoginInvalidEmailErrorMessage}}</small> -->
+         </div> 
+    
+        <div class="vregisterbtns">             
+           <button class="btn btn-primary" type="submit"> <i class="icon icon-arrow-long-right"></i>Post</button>                                            
+           <br>
+           <!-- <span class="text-danger" *ngIf="showVendorLoginRespMessage==true">Invalid Email or Password!</span> -->
+        </div>
+        </form>
+    </div>    
+  </div>
+  <hr/>
+  <br>
+  <div class="col-12">
+    
+    <h3>Please check your feed</h3>
+    <div *ngFor="let data of pageData[0]?.array_agg">  
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item">{{data.post_text}}</li>
+        </ul>
+        <!-- {{data.post_text}} -->
+      </div>
+    </div>
+    
+  </div>
+
+
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="vendorheading text-left">
+        <h2>Register</h2>                      
+      </div>
+
+      <div>                      
+        <div>
+          <form [formGroup]="registrationFormGroup" (ngSubmit)="loginFormSubmit()">           
+            <div class="form-group">
+              <input formControlName="userName" id="userName" type="text" class="form-control" placeholder="User Name" required="" maxlength="150">
+               <!-- <small class="text-danger" *ngIf="!!showErrorUserEmail">{{appVariables.vendorLoginInvalidEmailErrorMessage}}</small> -->
+             </div> 
+            
+            <div class="form-group">
+              <input formControlName="userEmail" id="userEmail" type="email" class="form-control" placeholder="Email Address" required="" maxlength="150">
+               <!-- <small class="text-danger" *ngIf="!!showErrorUserEmail">{{appVariables.vendorLoginInvalidEmailErrorMessage}}</small> -->
+             </div>
+
+             <div class="form-group">
+              <input formControlName="phoneNumber" id="phoneNumber" type="text" class="form-control" placeholder="Phone No" required="" maxlength="150">
+               <!-- <small class="text-danger" *ngIf="!!showErrorUserEmail">{{appVariables.vendorLoginInvalidEmailErrorMessage}}</small> -->
+             </div>
+          
+            <div class="form-group">
+              <!-- <button class="showvalue" type="button"><i class="icon icon-eye-cross"></i></button> -->
+              <input formControlName="password" type="password" placeholder="Password" class="form-control" id="password" required="" minlength="8">              
+            </div>            
+            <div class="vregisterbtns">             
+               <button class="btn btn-primary" type="submit"> <i class="icon icon-arrow-long-right"></i>Register</button>                                            
+               <br>
+               <!-- <span class="text-danger" *ngIf="showVendorLoginRespMessage==true">Invalid Email or Password!</span> -->
+            </div>
+            </form>
+            <div>
+              Already User! Login <a routerLink="/login">here</a>
+            </div>        
+        </div>
+      
+
+    </div>
+  </div>
+</div>
